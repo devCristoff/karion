@@ -115,8 +115,8 @@ npm run clean
 1. **User Data Safeguard**:
    * **NEVER** wipe, truncate, or overwrite `data/kairon.db` (or legacy `data/kairon_db.json`) with mock or dummy data unless explicitly instructed by the user.
 2. **Secrets & Environment Variables**:
-   * **NEVER** expose API keys (`GEMINI_API_KEY`) or sensitive credentials in source code.
-   * All secret configurations must be retrieved via `.env.local` conforming to `.gitignore`.
+   * **NEVER** expose API keys or sensitive credentials in source code.
+   * All secret configurations must be retrieved via `.env` / `.env.local` conforming to `.gitignore`.
 3. **Backward Compatibility**:
    * When introducing new properties to `Task`, `MonthlyChallenge`, or `Person`, always declare them as optional (`field?: type`) to preserve compatibility with existing user databases.
 4. **Documentation & Comment Integrity**:

@@ -136,7 +136,7 @@ karion/
 │   └── main.tsx                # Punto de entrada de la aplicación React
 ├── server/
 │   └── db.ts                   # Capa de base de datos SQLite (better-sqlite3, esquema, consultas preparadas)
-├── .env.example                # Plantilla de variables de entorno (Gemini API, etc.)
+├── .env.example                # Plantilla de variables de entorno (PORT, etc.)
 ├── index.html                  # Plantilla HTML base con fuentes y metadatos
 ├── metadata.json               # Configuración de capacidades y metadatos de la app
 ├── package.json                # Dependencias y scripts de ejecución
@@ -165,14 +165,11 @@ karion/
    npm install
    ```
 
-3. **Configurar variables de entorno** *(opcional si usas funciones de Gemini)*:
+3. **Configurar variables de entorno** *(opcional)*:
    ```bash
-   cp .env.example .env.local
+   cp .env.example .env
    ```
-   Abre `.env.local` y añade tu clave si deseas integrar la API de Gemini:
-   ```env
-   GEMINI_API_KEY="tu_clave_de_gemini"
-   ```
+
 
 4. **Iniciar en modo desarrollo**:
    ```bash

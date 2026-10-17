@@ -9,7 +9,6 @@
  *
  * Environment variables (optional — create .env in the project root):
  *   PORT=3000          HTTP port (default: 3000)
- *   GEMINI_API_KEY=…   Google Gemini key (not used yet)
  */
 
 import 'dotenv/config';

@@ -23,7 +23,6 @@ npm start            # node server.js — serves dist/ + full REST API on port 3
 - `npm run preview` serves `dist/` only with NO `/api`. Do not use it in production.
 - There is no test runner. Don't assume `npm test` exists.
 - `PORT=XXXX npm start` overrides the default port 3000.
-- Gemini is optional. Create a `.env` file in the project root with `GEMINI_API_KEY=...` if needed (see Gotchas).
 
 ## Backend lives inside Vite
 
@@ -60,7 +59,7 @@ The DB has foreign keys only from child tables to `users`/`tasks`/`challenges`. 
 
 ## Gotchas
 
-- **Gemini is not wired up.** `@google/genai` is in `package.json` and `.env.example` documents `GEMINI_API_KEY`, but nothing in `src/` or `server/` imports or reads them. The README's AI-feature claims don't reflect the code.
+- **Gemini is not wired up / not used.** `@google/genai` was present as an unused dependency and has no integration in `src/` or `server/`.
 - **Legacy JSON migration is dormant after first run.** `migrateFromJson()` only fires if `data/kairon_db.json` exists and `meta.json_migrated` is not set. The live store is `data/kairon.db`.
 - **The first registered user adopts all orphan rows** (`userId` NULL or empty). Re-registering on a populated DB does not.
 - **Dev server binds `0.0.0.0`** (`--host=0.0.0.0`), so the API endpoints are reachable from the local network while `npm run dev` is running. Auth still gates every data route.
