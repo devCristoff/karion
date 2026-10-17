@@ -7,15 +7,23 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev       # Vite on http://localhost:3000. The REST API only exists here (see Backend).
-npm run lint      # tsc --noEmit. This is the only type/static check; there is no ESLint.
-npm run build     # Production bundle into dist/. Does not run lint.
-npm run preview   # Serves dist/ only. There is NO /api in preview, so auth and data won't work.
+# Development
+npm run dev          # Vite on http://localhost:3000 — API lives here via sqlitePlugin
+npm run lint         # tsc --noEmit. The only static check; there is no ESLint.
+
+# Production build
+npm run build        # Compile React frontend → dist/
+npm run build:server # Bundle server/index.ts → server.js (25 KB, packages stay external)
+npm run build:all    # Both in sequence (use this before deploying)
+
+# Run production server
+npm start            # node server.js — serves dist/ + full REST API on port 3000
 ```
 
-- There is no test runner or test suite. Don't assume `npm test` exists.
-- `npm run clean` deletes `dist/` and `server.js`, but `server.js` no longer exists. It's harmless but stale.
-- Gemini is optional. `.env.local` may hold `GEMINI_API_KEY`, but no source file reads it (see Gotchas).
+- `npm run preview` serves `dist/` only with NO `/api`. Do not use it in production.
+- There is no test runner. Don't assume `npm test` exists.
+- `PORT=XXXX npm start` overrides the default port 3000.
+- Gemini is optional. Create a `.env` file in the project root with `GEMINI_API_KEY=...` if needed (see Gotchas).
 
 ## Backend lives inside Vite
 
