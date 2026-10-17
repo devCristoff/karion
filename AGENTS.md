@@ -54,7 +54,6 @@ All schema modifications or extensions to core entities must originate in `src/t
 * **Iconography**: `lucide-react`.
 * **Animations**: `motion` (Framer Motion).
 * **Build System**: Vite 8+.
-* **AI Capabilities**: `@google/genai` (Google Gemini SDK for intelligent features).
 
 ---
 

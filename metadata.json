@@ -1,6 +1,5 @@
 {
   "name": "Kairon - Task & Challenge Planner",
   "description": "Gestor de productividad personal con retos mensuales, matriz de Eisenhower, tablero Kanban, asignación de personas y analítica de progreso.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "requestFramePermissions": []
 }

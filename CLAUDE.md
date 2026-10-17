@@ -59,7 +59,6 @@ The DB has foreign keys only from child tables to `users`/`tasks`/`challenges`. 
 
 ## Gotchas
 
-- **Gemini is not wired up / not used.** `@google/genai` was present as an unused dependency and has no integration in `src/` or `server/`.
 - **Legacy JSON migration is dormant after first run.** `migrateFromJson()` only fires if `data/kairon_db.json` exists and `meta.json_migrated` is not set. The live store is `data/kairon.db`.
 - **The first registered user adopts all orphan rows** (`userId` NULL or empty). Re-registering on a populated DB does not.
 - **Dev server binds `0.0.0.0`** (`--host=0.0.0.0`), so the API endpoints are reachable from the local network while `npm run dev` is running. Auth still gates every data route.

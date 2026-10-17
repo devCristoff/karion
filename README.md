@@ -94,7 +94,6 @@ Clasifica visual e intuitivamente tus tareas según el cruce de Urgencia e Impor
 | **Build Tool & Servidor** | [Vite](https://vitejs.dev/) | Compilación ultrarrápida, HMR optimizado y middleware local para API REST (`/api/data`) |
 | **Estilos & Diseño** | [Tailwind CSS v4](https://tailwindcss.com/) | Estilizado atómico moderno de alto rendimiento con tema oscuro personalizado |
 | **Iconos & Animaciones** | [Lucide React](https://lucide.dev/) + [Motion](https://motion.dev/) | Iconografía nítida y transiciones fluidas de interfaz |
-| **IA / LLM (Opcional)** | [@google/genai](https://www.npmjs.com/package/@google/genai) | Integración con la API de Google Gemini para capacidades inteligentes |
 | **Tipografía** | Plus Jakarta Sans & JetBrains Mono | Legibilidad moderna en paneles numéricos y textos descriptivos |
 
 ---
