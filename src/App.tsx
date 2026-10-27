@@ -401,11 +401,6 @@ export default function App() {
         isMobileOpen={isMobileSidebarOpen}
         onCloseMobile={() => setIsMobileSidebarOpen(false)}
         pendingTasksCount={pendingTasksCount}
-        onNewTask={() => openNewTaskModal()}
-        onNewChallenge={() => {
-          setEditingChallenge(null);
-          setChallengeModalOpen(true);
-        }}
         currentUser={currentUser}
         onLogout={handleLogout}
       />

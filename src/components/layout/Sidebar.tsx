@@ -5,9 +5,7 @@ import {
   CheckSquare, 
   Grid2x2, 
   Kanban, 
-  Users, 
-  ChevronLeft, 
-  ChevronRight, 
+  Users,
   X,
   PanelLeftOpen,
   LogOut
@@ -22,8 +20,6 @@ interface SidebarProps {
   isMobileOpen: boolean;
   onCloseMobile: () => void;
   pendingTasksCount: number;
-  onNewTask: () => void;
-  onNewChallenge: () => void;
   currentUser: User | null;
   onLogout: () => void;
 }
@@ -36,8 +32,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
   isMobileOpen,
   onCloseMobile,
   pendingTasksCount,
-  onNewTask,
-  onNewChallenge,
   currentUser,
   onLogout,
 }) => {
@@ -45,9 +39,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const navItems: { id: AppView; label: string; icon: React.ReactNode; count?: number }[] = [
     { id: 'dashboard', label: 'Dashboard', icon: <BarChart3 className="w-5 h-5 shrink-0" /> },
     { id: 'challenges', label: 'Retos Mensuales', icon: <Trophy className="w-5 h-5 shrink-0" /> },
-    { id: 'tasks', label: 'Lista To-Do', icon: <CheckSquare className="w-5 h-5 shrink-0" />, count: pendingTasksCount },
     { id: 'eisenhower', label: 'Matriz Eisenhower', icon: <Grid2x2 className="w-5 h-5 shrink-0" /> },
     { id: 'kanban', label: 'Tablero Kanban', icon: <Kanban className="w-5 h-5 shrink-0" /> },
+    { id: 'tasks', label: 'Lista To-Do', icon: <CheckSquare className="w-5 h-5 shrink-0" />, count: pendingTasksCount },
     { id: 'people', label: 'Personas & Agentes', icon: <Users className="w-5 h-5 shrink-0" /> },
   ];
 
@@ -105,32 +99,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <X className="w-5 h-5" />
           </button>
         </div>
-
-        {/* Quick Action in Expanded Sidebar */}
-        {(!isCollapsed || isMobileOpen) && (
-          <div className="p-3 border-b border-neutral-900 space-y-2">
-            <button
-              onClick={() => {
-                onNewTask();
-                onCloseMobile();
-              }}
-              className="w-full flex items-center justify-center px-3 py-2 text-xs font-semibold text-neutral-950 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 rounded-lg transition-all shadow-sm shadow-amber-500/20"
-            >
-              <span>Nueva Tarea</span>
-            </button>
-
-            <button
-              onClick={() => {
-                onNewChallenge();
-                onCloseMobile();
-              }}
-              className="w-full flex items-center justify-center gap-2 px-3 py-1.5 text-xs font-semibold text-neutral-300 bg-neutral-900 hover:bg-neutral-800 hover:text-white rounded-lg border border-neutral-800 transition-colors"
-            >
-              <Trophy className="w-3.5 h-3.5 text-amber-400" />
-              <span>Nuevo Reto</span>
-            </button>
-          </div>
-        )}
 
         {/* Nav Links List */}
         <nav className="flex-1 px-3 py-4 space-y-1.5 overflow-y-auto">
