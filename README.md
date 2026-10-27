@@ -101,7 +101,7 @@ Clasifica visual e intuitivamente tus tareas según el cruce de Urgencia e Impor
 ## 📁 Estructura del Proyecto
 
 ```text
-karion/
+kairon/
 ├── data/
 │   └── kairon.db               # Base de datos SQLite local (better-sqlite3, modo WAL)
 ├── src/
@@ -155,8 +155,8 @@ karion/
 
 1. **Clonar el repositorio**:
    ```bash
-   git clone https://github.com/devCristoff/karion.git
-   cd karion
+   git clone https://github.com/devCristoff/kairon.git
+   cd kairon
    ```
 
 2. **Instalar dependencias**:

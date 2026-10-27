@@ -1,0 +1,17 @@
+[Unit]
+Description=Kairon - Task & Challenge Planner
+After=network.target
+
+[Service]
+Type=simple
+User=cmota
+WorkingDirectory=/opt/apps/kairon
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+RestartSec=5
+Environment=NODE_ENV=production
+# Optional: override port
+# Environment=PORT=3000
+
+[Install]
+WantedBy=multi-user.target
